@@ -6,8 +6,14 @@ import json
 import os
 from typing import Optional
 
+# Disable voice features to avoid audioop dependency
+import sys
+if sys.version_info >= (3, 13):
+    discord.voice_client = None
+
 # Bot setup
 intents = discord.Intents.default()
+intents.voice_states = False
 bot = commands.Bot(command_prefix='!', intents=intents)
 tree = bot.tree
 
