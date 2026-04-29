@@ -25,7 +25,7 @@ def save_config(config):
         json.dump(config, f, indent=2)
 
 async def fetch_token(session, uid, password):
-    url = f"https://jwt-token-flame.vercel.app/token?uid={uid}&password={password}"
+    url = f"https://jwt.03102008.xyz/token?uid={uid}&password={password}"
     try:
         async with session.get(url, timeout=10) as resp:
             data = await resp.json()
